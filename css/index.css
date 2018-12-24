@@ -1,0 +1,215 @@
+@charset "utf-8";
+/* CSS Document */
+/*html,body { user-select: none; -moz-user-select: none; -webkit-user-select: none; }*/
+body,
+ul,
+ol,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input,
+select,
+textarea,
+form {
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+}
+body {
+  font-family: Arial, 'Microsoft YaHei';
+  color: #666;
+  overflow-x: hidden;
+  position: relative;
+  background: #f1f3f5;
+  min-width: 1200px;
+}
+li {
+  list-style: none;
+}
+img {
+  border: none;
+  display: block;
+}
+input,
+select,
+textarea,
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+em,
+i,
+dfn {
+  font-style: normal;
+}
+textarea {
+  resize: none;
+}
+main {
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: #666;
+}
+mark {
+  background: none;
+}
+/*a:hover{ opacity:0.9; filter: alpha(opacity=90);}*/
+button {
+  cursor: pointer;
+  transition: 0.5s;
+}
+button:focus {
+  border: none;
+  outline: none;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+.wrap {
+    margin: 0 auto;
+    width: 1200px;
+}
+/*浮动*/
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clear:after,
+.clear:before {
+  content: "";
+  display: table;
+}
+.clear:after {
+  clear: both;
+}
+.clear {
+  *zoom: 1;
+}
+
+/* 首页样式 */
+.banner {
+    height: 200px;
+    perspective: 300px;
+    background: 
+        url("../img/banner.png") center no-repeat,
+        linear-gradient(-90deg,#e75c77,#ff9489) center center no-repeat,
+        linear-gradient(90deg,#ff9489 0%,#ff9489 50%,#e75c77 50%) center center no-repeat;
+    background-size: auto auto,1600px 200px,100% 200px;
+    overflow: hidden;
+}
+@keyframes title {
+  0% {
+    transform: rotateX(5deg) rotateY(10deg);
+  }
+  3% {
+    transform: rotateX(-4deg) rotateY(-8deg);
+  }
+  6% {
+    transform: rotateX(3deg) rotateY(6deg);
+  }
+  9% {
+    transform: rotateX(-2deg) rotateY(-4deg);
+  }
+  12% {
+    transform: rotateX(1deg) rotateY(2deg);
+  }
+  15% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+}
+.banner-title {
+    margin: 63px auto 0;
+    width: 199px;
+    height: 0;
+    padding-top: 35px;
+    overflow: hidden;
+    background: url("../img/banner-title.png") no-repeat; 
+}
+.banner-title:hover {
+  animation: title 2.2s;
+}
+@keyframes slogan {
+  0%{
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 310px 0;
+  }
+}
+.banner-slogan {
+    width: 310px;
+    margin: 0 auto;
+    text-align: center;
+    font: 20px/46px "微软雅黑";
+    color:rgba(255, 255, 255, .7);
+    background: linear-gradient(46deg,rgba(255,255,255, 0) 0, rgba(255,255,255, 0) 15%, rgba(255,255,255, 1) 25%, rgba(255,255,255, 1) 28%, rgba(255,255,255, 0) 38%) repeat-x 0 0;
+    -webkit-background-clip: text;
+    animation: slogan 3s infinite linear;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, .15);
+}
+.index-nav {
+  padding: 22px 0 20px;
+}
+.index-nav div {
+  float: left;
+  margin-right: 50px;
+  perspective: 100px;
+}
+.index-nav p {
+  transform-origin: center center -18px;
+  transform-style: preserve-3d;
+  height: 36px;
+  transition: .5s;
+}
+.index-nav a {
+  border: solid  transparent;
+  border-width: 3px 0;
+  display: block;
+  font: 18px/30px "微软雅黑";
+  color: #000;
+  backface-visibility: hidden;
+}
+.index-nav a:nth-child(2) {
+  transform-origin: top;
+  transform: rotateX(-90deg);
+  color: #e75c77;
+  border-bottom-color: #e75c77;
+}
+.index-nav .active p,
+.index-nav div:hover p{
+  transform: rotateX(90deg);
+}
+.course-list {
+  width: 885px;
+}
+.course-list li {
+  float: left;
+  width: 280px;
+  margin-right: 15px;
+  perspective: 500px;
+}
+.course-list .course {
+  background: #fff;
+  height: 394px;
+  transform-style: preserve-3d;
+  border-radius: 8px;
+}
+.course-list img {
+  border-radius: 8px 8px 0 0 ;
+}
+
