@@ -16,20 +16,17 @@
   0% {
     transform: rotateX(5deg) rotateY(10deg);
   }
-  3% {
+  20% {
     transform: rotateX(-4deg) rotateY(-8deg);
   }
-  6% {
+  40% {
     transform: rotateX(3deg) rotateY(6deg);
   }
-  9% {
+  60% {
     transform: rotateX(-2deg) rotateY(-4deg);
   }
-  12% {
+  80% {
     transform: rotateX(1deg) rotateY(2deg);
-  }
-  15% {
-    transform: rotateX(0deg) rotateY(0deg);
   }
   100% {
     transform: rotateX(0deg) rotateY(0deg);
@@ -43,8 +40,8 @@
     overflow: hidden;
     background: url("../img/banner-title.png") no-repeat; 
 }
-.banner-title:hover {
-  animation: title 2.2s;
+.banner-title.animation-start {
+  animation: title .3s;
 }
 @keyframes slogan {
   0%{
@@ -68,7 +65,9 @@
 
 /* 导航 样式 */
 .index-nav {
+  position: relative;
   padding: 22px 0 20px;
+  overflow: hidden;
 }
 .index-nav div {
   float: left;
@@ -93,11 +92,18 @@
   transform-origin: top;
   transform: rotateX(-90deg);
   color: #e75c77;
-  border-bottom-color: #e75c77;
 }
 .index-nav .active p,
 .index-nav div:hover p{
   transform: rotateX(90deg);
+}
+.index-nav .line {
+  position: absolute;
+  left: -100px;
+  bottom: 20px;
+  width: 20px;
+  height: 3px;
+  background: #e75c77;
 }
 
 
@@ -114,7 +120,7 @@
   float: left;
   width: 280px;
   margin: 0 15px 25px 0;
-  perspective: 500px;
+  perspective: 1200px;
 }
 .course-list .course {
   background: #fff;
@@ -326,7 +332,7 @@
   background: url("../img/watch-ranking-icon-2.png") no-repeat;
   transform-origin: 41px 0;
 }
-.watch-ranking-icon:hover span {
+.watch-ranking-icon .animation-start {
   animation: 1s ranking-icon;
 }
 .buy-ranking {
@@ -344,6 +350,6 @@
   background: url("../img/buy-ranking-icon.png") no-repeat;
   transform-origin: 36px 39px;
 }
-.buy-ranking-icon:hover {
+.buy-ranking-icon.animation-start {
   animation: 1s ranking-icon;
 }
