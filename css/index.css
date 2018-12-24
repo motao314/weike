@@ -1,104 +1,7 @@
 @charset "utf-8";
-/* CSS Document */
-/*html,body { user-select: none; -moz-user-select: none; -webkit-user-select: none; }*/
-body,
-ul,
-ol,
-dl,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-input,
-select,
-textarea,
-form {
-  margin: 0;
-  padding: 0;
-}
-html {
-  height: 100%;
-}
-body {
-  font-family: Arial, 'Microsoft YaHei';
-  color: #666;
-  overflow-x: hidden;
-  position: relative;
-  background: #f1f3f5;
-  min-width: 1200px;
-}
-li {
-  list-style: none;
-}
-img {
-  border: none;
-  display: block;
-}
-input,
-select,
-textarea,
-button {
-  outline: none;
-  border: none;
-  background-color: transparent;
-}
-em,
-i,
-dfn {
-  font-style: normal;
-}
-textarea {
-  resize: none;
-}
-main {
-  display: block;
-}
-a {
-  text-decoration: none;
-  color: #666;
-}
-mark {
-  background: none;
-}
-/*a:hover{ opacity:0.9; filter: alpha(opacity=90);}*/
-button {
-  cursor: pointer;
-  transition: 0.5s;
-}
-button:focus {
-  border: none;
-  outline: none;
-  opacity: 0.6;
-  filter: alpha(opacity=60);
-}
-.wrap {
-    margin: 0 auto;
-    width: 1200px;
-}
-/*浮动*/
-.fl {
-  float: left;
-}
-.fr {
-  float: right;
-}
-.clear:after,
-.clear:before {
-  content: "";
-  display: table;
-}
-.clear:after {
-  clear: both;
-}
-.clear {
-  *zoom: 1;
-}
-
 /* 首页样式 */
+
+/* banner 样式 */
 .banner {
     height: 200px;
     perspective: 300px;
@@ -162,6 +65,8 @@ button:focus {
     animation: slogan 3s infinite linear;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, .15);
 }
+
+/* 导航 样式 */
 .index-nav {
   padding: 22px 0 20px;
 }
@@ -174,7 +79,7 @@ button:focus {
   transform-origin: center center -18px;
   transform-style: preserve-3d;
   height: 36px;
-  transition: .5s;
+  transition: .3s;
 }
 .index-nav a {
   border: solid  transparent;
@@ -194,13 +99,21 @@ button:focus {
 .index-nav div:hover p{
   transform: rotateX(90deg);
 }
+
+
+/* 主体 样式 */
+.index-main {
+  padding-bottom: 25px;
+}
+
+/* 课程列表 */
 .course-list {
   width: 885px;
 }
 .course-list li {
   float: left;
   width: 280px;
-  margin-right: 15px;
+  margin: 0 15px 25px 0;
   perspective: 500px;
 }
 .course-list .course {
@@ -210,6 +123,227 @@ button:focus {
   border-radius: 8px;
 }
 .course-list img {
-  border-radius: 8px 8px 0 0 ;
+  border-radius: 8px 8px 0 0;
+  width: 280px;
+  height: 280px;
+}
+.course-title {
+  margin: 10px 15px 0;
+  font: 16px/36px "微软雅黑";
+  color: #000;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.course-title {
+  margin: 10px 15px 0;
+  font: 16px/36px "微软雅黑";
+  color: #000;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.course-mask {
+  padding: 0 15px;
+}
+.course-mask mark {
+  float: left;
+  margin-right: 10px;
+  padding: 0 14px;
+  border: 1px solid #eee;
+  font: 14px/22px "微软雅黑";
+  color: #949fab;
+  border-radius: 12px;
+}
+.course-list .watch-nub {
+  float: left;
+  margin-left: 15px;
+  font: 14px/40px "微软雅黑";
+  padding-left: 30px;
+  background: url("../img/watch-icon.png") no-repeat 0 center;
+  color:#949fab;
+}
+.course-list .price {
+  float: right;
+  margin-right: 15px;
+  font: bold 16px/40px "微软雅黑";
+  color: #e75c77;
+}
+.course-list-more {
+  position: relative;
+  height: 24px;
+}
+.course-list-more .btn {
+  position: absolute;
+  left: 430.5px;
+  top: 0px;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #9aabb7;
+  border-radius: 50%;
+  font: 16px/22px "微软雅黑";
+  color: #9aabb7;
+  text-align: center;
+  cursor: pointer;
+  transition: .5s;
+  z-index: 2;
+}
+.course-list-more .btn:hover {
+  transform: rotate(360deg);
+}
+.course-list-more .loading {
+  position: relative;
+  z-index: 1;
+  padding: 7px 0;
+  height: 10px;
+  text-align: center;
+  transform: scale(0);
+} 
+.course-list-more .loading span {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 3px;
+  width: 10px;
+  height: 10px;
+  /* border: 1px solid #9aabb7; */
+  border-radius: 50%;
+  background: #9aabb7;
 }
 
+/* 排行榜样式 */
+.ranking-list {
+  width: 300px;
+}
+.ranking {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, .2)
+}
+.ranking-header {
+  position: relative;
+  height: 85px;
+  border-radius: 8px 8px 0 0;
+}
+.ranking-title {
+  width: 108px;
+  padding: 22px 0 0 25px;
+  font: bold 18px/24px "微软雅黑";
+  color: #fff;
+}
+.ranking-order {
+  padding: 10px 0 11px;
+}
+.ranking-order li {
+  height: 36px;
+  float: left;
+  width: 100%;
+}
+.ranking-order a {
+  display: block;
+  height: 36px;
+  padding: 0 15px;
+  transition: .1s;
+  font: 14px/36px "微软雅黑";
+}
+.ranking-order a:hover {
+  margin: -14px -20px;
+  padding: 14px 30px;
+  background: url("../img/ranking-order-hover.png") no-repeat;
+  background-size: cover;
+  font-size: 16px;
+}
+.ranking-order .nub {
+  float: left;
+  font-style: italic;
+  color: #9dadb9;
+}
+.ranking-order p {
+  float: left;
+  margin-left: 12px;
+  color: #999;
+}
+.ranking-order .good p,
+.ranking-order .good .nub {
+  color: #e75c77;
+}
+.ranking-order .sum {
+  float: right;
+  color: #e75c77;
+}
+
+.watch-ranking .ranking-header {
+  background: url("../img/watch-ranking-header.png") no-repeat;
+}
+@keyframes ranking-icon{
+  0%{
+    transform: rotate(20deg)
+  }
+  10%{
+    transform: rotate(-18deg)
+  }
+  20%{
+    transform: rotate(16deg)
+  }
+  30%{
+    transform: rotate(-14deg)
+  }
+  40%{
+    transform: rotate(12deg)
+  }
+  50%{
+    transform: rotate(-10deg)
+  }
+  60%{
+    transform: rotate(8deg)
+  }
+  70%{
+    transform: rotate(-6deg)
+  }
+  80%{
+    transform: rotate(4deg)
+  }
+  90%{
+    transform: rotate(-2deg)
+  }
+  100%{
+    transform: rotate(0deg)
+  }
+}
+.watch-ranking-icon {
+  position: absolute;
+  top: 13px;
+  right: 10px;
+  width: 76px;
+  height: 24px;
+  background: url("../img/watch-ranking-icon.png") no-repeat;
+}
+.watch-ranking-icon span {
+  position: absolute;
+  top: 24px;
+  left: -5px;
+  width: 86px;
+  height: 74px;
+  background: url("../img/watch-ranking-icon-2.png") no-repeat;
+  transform-origin: 41px 0;
+}
+.watch-ranking-icon:hover span {
+  animation: 1s ranking-icon;
+}
+.buy-ranking {
+  margin-top: 25px;
+}
+.buy-ranking .ranking-header {
+  background: url("../img/buy-ranking-header.png") no-repeat;
+}
+.buy-ranking-icon {
+  position: absolute;
+  top: 6px;
+  right: 9px;
+  width: 78px;
+  height: 109px;
+  background: url("../img/buy-ranking-icon.png") no-repeat;
+  transform-origin: 36px 39px;
+}
+.buy-ranking-icon:hover {
+  animation: 1s ranking-icon;
+}

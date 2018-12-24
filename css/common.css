@@ -1,0 +1,97 @@
+@charset "utf-8";
+body,
+ul,
+ol,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input,
+select,
+textarea,
+form {
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+}
+body {
+  font-family: Arial, 'Microsoft YaHei';
+  color: #666;
+  overflow-x: hidden;
+  position: relative;
+  background: #f1f3f5;
+  min-width: 1200px;
+}
+li {
+  list-style: none;
+}
+img {
+  border: none;
+  display: block;
+}
+input,
+select,
+textarea,
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+em,
+i,
+dfn {
+  font-style: normal;
+}
+textarea {
+  resize: none;
+}
+main {
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: #666;
+}
+mark {
+  background: none;
+}
+/*a:hover{ opacity:0.9; filter: alpha(opacity=90);}*/
+button {
+  cursor: pointer;
+  transition: 0.5s;
+}
+button:focus {
+  border: none;
+  outline: none;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+.wrap {
+    margin: 0 auto;
+    width: 1200px;
+}
+/*浮动*/
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clear:after,
+.clear:before {
+  content: "";
+  display: table;
+}
+.clear:after {
+  clear: both;
+}
+.clear {
+  *zoom: 1;
+}
