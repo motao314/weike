@@ -92,12 +92,12 @@ function transform(el, attr, val){
 
 function mTween(props){
   var el = props.el;
-  if(el.mTween) return;  
+	if(el.mTween) return;  
   var duration = props.duration || 400,
       fx = props.fx || 'easeOut',
       cb = props.cb,
-      attrs = props.attrs || {};
-  
+			attrs = props.attrs || {};
+			s = props.s
   var beginData = {}, changeData = {};
 	var maxDis = 0;
   for(var key in attrs){
@@ -121,9 +121,7 @@ function mTween(props){
   
   (function startMove(){
     el.mTween = window.requestAnimationFrame(startMove);
-    
     var time = Date.now() - startTime;
-    
     if(time > duration){
       time = duration;
       window.cancelAnimationFrame(el.mTween);
@@ -131,7 +129,7 @@ function mTween(props){
     }
     
     for(var key in attrs){
-      var currentPos = Tween[fx](time, beginData[key], changeData[key], duration);
+      var currentPos = Tween[fx](time, beginData[key], changeData[key], duration,s);
       css(el, key, currentPos);
     }
     

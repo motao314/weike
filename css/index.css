@@ -116,9 +116,27 @@
 .course-list {
   width: 885px;
 }
+@keyframes courseShow {
+  0%{
+    margin-top: 100px;
+    transform: scale(.8) translateZ(0) rotateX(-30deg); 
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1)  translateZ(0)  rotateX(0); 
+  }
+  70% {
+    margin-top: -5px;
+    opacity: 1;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
 .course-list li {
   float: left;
   width: 280px;
+  height: 394px;
   margin: 0 15px 25px 0;
   perspective: 1200px;
 }
@@ -127,6 +145,16 @@
   height: 394px;
   transform-style: preserve-3d;
   border-radius: 8px;
+  user-select: none;
+  opacity: 0;
+  transform-origin: top;
+}
+.course-list .show .course{
+  animation: 1.3s courseShow;
+  opacity: 1;
+}
+.course-list .course * {
+  transform-style: preserve-3d;
 }
 .course-list img {
   border-radius: 8px 8px 0 0;
@@ -148,6 +176,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  transform: translateZ(20px);
 }
 .course-mask {
   padding: 0 15px;
@@ -160,6 +189,7 @@
   font: 14px/22px "微软雅黑";
   color: #949fab;
   border-radius: 12px;
+  transform: translateZ(10px);
 }
 .course-list .watch-nub {
   float: left;
@@ -168,42 +198,65 @@
   padding-left: 30px;
   background: url("../img/watch-icon.png") no-repeat 0 center;
   color:#949fab;
+  transform: translateZ(15px);
 }
 .course-list .price {
   float: right;
   margin-right: 15px;
   font: bold 16px/40px "微软雅黑";
   color: #e75c77;
+  transform: translateZ(15px);
 }
 .course-list-more {
+  width: 870px;
   position: relative;
-  height: 24px;
+  height: 42px;
+}
+@keyframes loadBtn {
+  0%{
+    transform: scale(1,1);
+  }
+  20%{
+    transform: scale(1.2,.8);
+  }
+  40%{
+    transform: scale(.8,1.2);
+  }
+  60%{
+    transform: scale(1.1,.9);
+  }
+  80%{
+    transform: scale(.9,1.1);
+  }
+  100%{
+    transform: scale(1,1);
+  }
 }
 .course-list-more .btn {
   position: absolute;
-  left: 430.5px;
+  left: 414px;
   top: 0px;
-  width: 22px;
-  height: 22px;
-  border: 1px solid #9aabb7;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  font: 16px/22px "微软雅黑";
-  color: #9aabb7;
+  font: 12px/42px "微软雅黑";
+  /* color: #9aabb7; */
   text-align: center;
   cursor: pointer;
-  transition: .5s;
   z-index: 2;
+  background: #9aabb7;
+  color: #fff;
 }
-.course-list-more .btn:hover {
-  transform: rotate(360deg);
+.course-list-more .btn.animation-start {
+  animation: .8s loadBtn;
 }
 .course-list-more .loading {
   position: relative;
   z-index: 1;
-  padding: 7px 0;
+  padding: 16px 0;
   height: 10px;
   text-align: center;
-  transform: scale(0);
+  transform: scale(1)
 } 
 .course-list-more .loading span {
   display: inline-block;
@@ -214,7 +267,29 @@
   /* border: 1px solid #9aabb7; */
   border-radius: 50%;
   background: #9aabb7;
+} 
+@keyframes loading-icon1 {
+  0% {
+    transform: translateX(16px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
+@keyframes loading-icon2 {
+  0% {
+    transform: translateX(-16px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.course-list-more .loading.open span:nth-child(1) {
+  animation: loading-icon1 .2s  ease-out infinite alternate;
+}
+.course-list-more .loading.open span:nth-child(3) {
+  animation: loading-icon2 .2s  ease-out infinite alternate;
+} 
 
 /* 排行榜样式 */
 .ranking-list {
