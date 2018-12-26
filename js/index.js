@@ -34,7 +34,7 @@
 /* 导航的下划线跟随 */
 (function(){
     let indexNavs = document.querySelectorAll(".index-nav div");
-    let line = document.querySelector(".index-nav .line");
+    let lines = document.querySelectorAll(".index-nav .line");
     let active = document.querySelector(".index-nav .active");
     moveLine(active);
     indexNavs.forEach(item=>{
@@ -46,19 +46,23 @@
         };
     });
     function moveLine(el){
-        mTween.stop(line);
-        mTween({
-            el: line,
-            fx: "backOut",
-            duration: {
-                multiple: 1.6,
-                min: 400,
-                max: 600
-            },
-            attrs: {
-                width: el.offsetWidth,
-                left: el.offsetLeft
-            }
+        lines.forEach(line=>{
+            mTween.stop(line);
+            let l = el.offsetLeft - line.offsetParent.offsetLeft;
+            mTween({
+                el: line,
+                fx: "backOut",
+                duration: {
+                    multiple: 4.5,
+                    min: 400,
+                    max: 1200
+                },
+                attrs: {
+                    width: el.offsetWidth,
+                    left: l
+                },
+                s: 1.1
+            });
         });
     }
 })();
